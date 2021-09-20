@@ -363,7 +363,7 @@ function setButtonsTitle() {
         placement: 'right-start',
     });
     tippy(recordStreamBtn, {
-        content: 'START recording',
+        content: 'Record Meeting',
         placement: 'right-start',
     });
     tippy(fullScreenBtn, {
@@ -2269,7 +2269,7 @@ function setLocalMaxFps(maxFrameRate) {
         })
         .catch((err) => {
             console.error('setLocalMaxFps', err);
-            userLog('error', "Your device doesn't support the selected fps, please select the another one.");
+            userLog('error', "The device/Camera you're trying to use, does not support high resolution quality frquency Err: Camera_Management_FPS_Protection");
         });
 }
 

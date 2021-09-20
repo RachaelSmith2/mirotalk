@@ -399,7 +399,7 @@ function setButtonsTitle() {
         placement: 'right-start',
     });
     tippy(leaveRoomBtn, {
-        content: 'Leave this room',
+        content: 'Exit Meeting',
         placement: 'right-start',
     });
 

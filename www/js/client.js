@@ -4817,7 +4817,7 @@ function leaveRoom() {
         position: 'center',
         imageAlt: 'mirotalk-leave',
         imageUrl: leaveRoomImg,
-        title: 'Leave this room?',
+        title: 'Would you like to Exit this Meeting?',
         showDenyButton: true,
         confirmButtonText: `Yes`,
         denyButtonText: `No`,

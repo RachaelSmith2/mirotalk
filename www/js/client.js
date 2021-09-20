@@ -1854,7 +1854,7 @@ function setChatRoomBtn() {
     // show msger participants section
     msgerCPBtn.addEventListener('click', (e) => {
         if (!thereIsPeerConnections()) {
-            userLog('info', 'No participants detected');
+            userLog('Management_Info_Partcipant', 'We could not find any users.');
             return;
         }
         msgerCP.style.display = 'flex';

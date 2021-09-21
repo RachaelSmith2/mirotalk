@@ -45,7 +45,7 @@ const deleteImg = '../images/delete.png';
 const youtubeImg = '../images/youtube.png';
 const messageImg = '../images/message.png';
 const kickedOutImg = '../images/leave-room.png';
-const aboutImg = '../images/about.png';
+const ChangelogImg = '../www/Changelog.html';
 
 const notifyBySound = true; // turn on - off sound notifications
 const fileSharingInput = '*'; // allow all file extensions
@@ -4783,18 +4783,18 @@ function handleKickedOut(config) {
 /**
  * MiroTalk about info
  */
-function showAbout() {
+function showChangelog() {
     playSound('newMessage');
 
     Swal.fire({
         background: swalBackground,
         position: 'center',
         title: '<strong>WebRTC Made with ❤️</strong>',
-        imageAlt: 'mirotalk-about',
+        imageAlt: 'mirotalk-Changelog',
         imageUrl: aboutImg,
         html: `
         <br/>
-        <div id="about">
+        <div id="Changelog">
             <b>Open Source</b> project on
             <a href="https://github.com/miroslavpejic85/mirotalk" target="_blank"><br/></br>
             <img alt="mirotalk github" src="../images/github.png"></a><br/><br/>

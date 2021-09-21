@@ -4825,6 +4825,7 @@ function leaveRoom() {
         imageUrl: leaveRoomImg,
         title: 'You are about to end this meeting do you wish to continue?',
         showDenyButton: true,
+        showConfirmButton: true,
         confirmButtonText: `Leave Meeting`,
         denyButtonText: `Stay in Meeting`,
         showClass: {

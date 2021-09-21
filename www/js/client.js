@@ -4834,7 +4834,7 @@ function leaveRoom() {
             popup: 'animate__animated animate__fadeOutUp',
         },
     }).then((result) => {
-        if (result.isConfirmed) window.location.href = '/thankyou.html';
+        if (result.isConfirmed) window.location.href = '/newcall';
     });
 }
 

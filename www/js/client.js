@@ -45,7 +45,7 @@ const deleteImg = '../images/delete.png';
 const youtubeImg = '../images/youtube.png';
 const messageImg = '../images/message.png';
 const kickedOutImg = '../images/leave-room.png';
-const ChangelogImg = '../www/Changelog.html';
+const aboutImg = '../images/about.png';
 
 const notifyBySound = true; // turn on - off sound notifications
 const fileSharingInput = '*'; // allow all file extensions
@@ -394,6 +394,10 @@ function setButtonsTitle() {
         content: 'Show settings',
         placement: 'right-start',
     });
+    tippy(aboutBtn, {
+        content: 'Show about',
+        placement: 'right-start',
+    });
     tippy(leaveRoomBtn, {
         content: 'Exit Meeting',
         placement: 'right-start',
@@ -485,10 +489,6 @@ function setButtonsTitle() {
         content: 'Close the game',
     });
 }
-tippy(ChangelogBtn, {
-    content: 'Show Updates',
-});
-
 
 /**
  * Get peer info using DetecRTC
@@ -1719,7 +1719,7 @@ function manageLeftButtons() {
     setMyFileShareBtn();
     setMyGameBtn();
     setMySettingsBtn();
-    setChangelogBtn();
+    setAboutBtn();
     setLeaveRoomBtn();
     showButtonsBarAndMenu();
 }
@@ -2049,9 +2049,9 @@ function setMySettingsBtn() {
 /**
  * About button click event
  */
-function setChangelogBtn() {
-    ChangelogBtn.addEventListener('click', (e) => {
-        showChangelog();
+function setAboutBtn() {
+    aboutBtn.addEventListener('click', (e) => {
+        showAbout();
     });
 }
 
@@ -2257,7 +2257,7 @@ function getVideoConstraints(videoQuality) {
                 width: { exact: 4840 },
                 height: { exact: 2160 },
                 frameRate: frameRate,
-            }; // This can be 8K only for 3090's only
+            }; // This can be 8K only for 3090's onm
     }
 }
 
@@ -4783,18 +4783,18 @@ function handleKickedOut(config) {
 /**
  * MiroTalk about info
  */
-function showChangelog() {
+function showAbout() {
     playSound('newMessage');
 
     Swal.fire({
         background: swalBackground,
         position: 'center',
         title: '<strong>WebRTC Made with ❤️</strong>',
-        imageAlt: 'mirotalk-Changelog',
+        imageAlt: 'mirotalk-about',
         imageUrl: aboutImg,
         html: `
         <br/>
-        <div id="Changelog">
+        <div id="about">
             <b>Open Source</b> project on
             <a href="https://github.com/miroslavpejic85/mirotalk" target="_blank"><br/></br>
             <img alt="mirotalk github" src="../images/github.png"></a><br/><br/>

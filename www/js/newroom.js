@@ -50,6 +50,7 @@ let adjectives = [
     'calm',
     'silly',
     'smart',
+    'historical',
 ];
 
 let nouns = [

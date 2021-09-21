@@ -732,7 +732,7 @@ function welcomeUser() {
             `</p>`,
         showDenyButton: false,
         showCancelButton: false,
-        confirmButtonText: `Copy meeting URL`,
+        confirmButtonText: `Copy URL`,
         denyButtonText: `Email invite`,
         cancelButtonText: `Close`,
         showClass: {

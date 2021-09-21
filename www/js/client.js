@@ -394,10 +394,6 @@ function setButtonsTitle() {
         content: 'Show settings',
         placement: 'right-start',
     });
-    tippy(aboutBtn, {
-        content: 'Show about',
-        placement: 'right-start',
-    });
     tippy(leaveRoomBtn, {
         content: 'Exit Meeting',
         placement: 'right-start',
@@ -2257,7 +2253,7 @@ function getVideoConstraints(videoQuality) {
                 width: { exact: 4840 },
                 height: { exact: 2160 },
                 frameRate: frameRate,
-            };    
+            }; // This can be 8K only for 3090's only
     }
 }
 

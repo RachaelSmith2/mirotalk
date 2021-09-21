@@ -367,7 +367,7 @@ function setButtonsTitle() {
         placement: 'right-start',
     });
     tippy(fullScreenBtn, {
-        content: 'VIEW full screen',
+        content: 'Full Screen',
         placement: 'right-start',
     });
     tippy(chatRoomBtn, {
@@ -387,7 +387,7 @@ function setButtonsTitle() {
         placement: 'right-start',
     });
     tippy(gameBtn, {
-        content: 'START a game',
+        content: 'Play a Game',
         placement: 'right-start',
     });
     tippy(mySettingsBtn, {
@@ -2252,6 +2252,12 @@ function getVideoConstraints(videoQuality) {
                 height: { exact: 2160 },
                 frameRate: frameRate,
             }; // video cam constraints ultra high bandwidth
+        case '8kVideo':
+            return {
+                width: { exact: 4840 },
+                height: { exact: 2160 },
+                frameRate: frameRate,
+            };    
     }
 }
 

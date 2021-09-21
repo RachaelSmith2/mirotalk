@@ -485,6 +485,10 @@ function setButtonsTitle() {
         content: 'Close the game',
     });
 }
+tippy(ChangelogBtn, {
+    content: 'Show Updates',
+});
+
 
 /**
  * Get peer info using DetecRTC
@@ -1715,7 +1719,7 @@ function manageLeftButtons() {
     setMyFileShareBtn();
     setMyGameBtn();
     setMySettingsBtn();
-    setAboutBtn();
+    setChangelogBtn();
     setLeaveRoomBtn();
     showButtonsBarAndMenu();
 }

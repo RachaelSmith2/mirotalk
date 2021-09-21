@@ -2498,7 +2498,7 @@ async function shareRoomUrl() {
             } else if (result.isDenied) {
                 let message = {
                     email: '',
-                    subject: 'Please join our MiroTalk Video Chat Meeting',
+                    subject: 'Please join our Zeggleo Video Chat Meeting',
                     body: 'Click to join: ' + myRoomUrl,
                 };
                 shareRoomByEmail(message);
@@ -2807,7 +2807,7 @@ function startRecordingTime() {
     let rc = setInterval(function printTime() {
         if (isStreamRecording) {
             recElapsedTime = Date.now() - recStartTime;
-            myVideoParagraph.innerHTML = myPeerName + '&nbsp;&nbsp; 🔴 REC ' + getTimeToString(recElapsedTime);
+            myVideoParagraph.innerHTML = myPeerName + '&nbsp;&nbsp; 🔴 RECORDING ' + getTimeToString(recElapsedTime);
             return;
         }
         clearInterval(rc);
@@ -2871,12 +2871,12 @@ function startStreamRecording() {
                 })
                 .catch((err) => {
                     console.error('[Error] Unable to recording the screen + audio', err);
-                    userLog('error', 'Unable to recording the screen + audio ' + err);
+                    userLog('error', 'Meeting is unable to resume recording does not find Audio + Video...' + err);
                 });
         }
     } catch (err) {
         console.error('Exception while creating MediaRecorder: ', err);
-        userLog('error', "Can't start stream recording: " + err);
+        userLog('error', "ERR: Meeting cannot start recording due to: " + err);
         return;
     }
 }
@@ -2926,7 +2926,7 @@ function handleMediaRecorderStart(event) {
     // only for desktop
     if (!isMobileDevice) {
         tippy(recordStreamBtn, {
-            content: 'STOP recording',
+            content: 'End Recording',
             placement: 'right-start',
         });
     } else {
@@ -2966,7 +2966,7 @@ function handleMediaRecorderStop(event) {
     // only for desktop
     if (!isMobileDevice) {
         tippy(recordStreamBtn, {
-            content: 'START recording',
+            content: 'Begin Recording',
             placement: 'right-start',
         });
     } else {
@@ -3106,7 +3106,7 @@ function hideChatRoomAndEmojiPicker() {
     // only for desktop
     if (!isMobileDevice) {
         tippy(chatRoomBtn, {
-            content: 'OPEN the chat',
+            content: 'View Chat',
             placement: 'right-start',
         });
     }
@@ -3224,7 +3224,7 @@ function msgerAddPeers(peers) {
                         id="${peer_id}_pMsgInput"
                         class="msger-input"
                         type="text"
-                        placeholder="💬 Enter your message..."
+                        placeholder="Enter your personal message to Everyone!"
                     />
                     <button id="${peer_id}_pMsgBtn" class="fas fa-paper-plane" value="${peer_name}">&nbsp;${peer_name}</button>
                 </div>
@@ -3489,7 +3489,7 @@ function setMyHandStatus() {
         myHandStatus = false;
         if (!isMobileDevice) {
             tippy(myHandBtn, {
-                content: 'RAISE your hand',
+                content: 'Raise Your Hand',
                 placement: 'right-start',
             });
         }
@@ -3587,7 +3587,7 @@ function setPeerHandStatus(peer_id, peer_name, status) {
     let peerHandStatus = getId(peer_id + '_handStatus');
     peerHandStatus.style.display = status ? 'block' : 'none';
     if (status) {
-        userLog('toast', peer_name + ' has raised the hand');
+        userLog('toast', peer_name + ' has raised their hand');
         playSound('raiseHand');
     }
 }
@@ -3662,7 +3662,7 @@ function handlePeerPrivateMsg(peer_id, toPeerName) {
                     pMsg + '<br/><hr>Private message to ' + toPeerName,
                     true,
                 );
-                userLog('toast', 'Message sent to ' + toPeerName + ' 👍');
+                userLog('toast', 'The message has been sent to ' + toPeerName + ' 👍');
             }
         });
     };
@@ -3807,7 +3807,7 @@ function disableAllPeers(element) {
         if (result.isConfirmed) {
             switch (element) {
                 case 'audio':
-                    userLog('toast', 'Mute everyone 👍');
+                    userLog('toast', 'Mute Everyone');
                     emitPeersAction('muteAudio');
                     break;
                 case 'video':
@@ -3883,7 +3883,7 @@ function lockUnlockRoom() {
  * Refresh Room Status (Locked/Unlocked)
  */
 function emitRoomStatus() {
-    let rStatus = roomLocked ? '🔒 LOCKED the room, no one can access!' : '🔓 UNLOCKED the room';
+    let rStatus = roomLocked ? 'This Meeting Has Been Locked No One Else Can Join!' : 'Meeting Unlocked Everyone Who Has A Link Or has been Invited Can Join!';
     userLog('toast', rStatus);
 
     sendToServer('roomStatus', {
@@ -3916,8 +3916,8 @@ function handleRoomLocked() {
         background: swalBackground,
         position: 'center',
         imageUrl: roomLockedImg,
-        title: 'Oops, Room Locked',
-        text: 'The room is locked, try with another one.',
+        title: 'Oops, This meeting has been locked!',
+        text: 'The meeting has been locked, contact the meeting organzier or join another one later.',
         showDenyButton: false,
         confirmButtonText: `Ok`,
         showClass: {

@@ -4826,8 +4826,7 @@ function leaveRoom() {
         title: 'You are about to end this meeting do you wish to continue?',
         showDenyButton: true,
         confirmButtonText: `Leave Meeting`,
-        confirmButtonText: `End Meeting For All`,
-        denyButtonText: `No`,
+        denyButtonText: `Stay in Meeting`,
         showClass: {
             popup: 'animate__animated animate__fadeInDown',
         },
@@ -4835,7 +4834,7 @@ function leaveRoom() {
             popup: 'animate__animated animate__fadeOutUp',
         },
     }).then((result) => {
-        if (result.isConfirmed) window.location.href = '/newcall';
+        if (result.isConfirmed) window.location.href = '/thankyou.html';
     });
 }
 

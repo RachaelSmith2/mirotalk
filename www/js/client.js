@@ -4823,9 +4823,10 @@ function leaveRoom() {
         position: 'center',
         imageAlt: 'mirotalk-leave',
         imageUrl: leaveRoomImg,
-        title: 'Site Says: Are you sure you wish to exit this meeting and end it for all?',
+        title: 'You are about to end this meeting do you wish to continue?',
         showDenyButton: true,
-        confirmButtonText: `Yes`,
+        confirmButtonText: `Leave Meeting`,
+        confirmButtonText: `End Meeting For All`,
         denyButtonText: `No`,
         showClass: {
             popup: 'animate__animated animate__fadeInDown',

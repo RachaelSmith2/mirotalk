@@ -726,12 +726,12 @@ function welcomeUser() {
         html:
             `
         <br/> 
-        <p style="color:white;">Share this meeting invite others to join.</p>
+        <p style="color:white;">Invite people in order for you to join!</p>
         <p style="color:rgb(8, 189, 89);">` +
             myRoomUrl +
             `</p>`,
-        showDenyButton: true,
-        showCancelButton: true,
+        showDenyButton: false,
+        showCancelButton: false,
         confirmButtonText: `Copy meeting URL`,
         denyButtonText: `Email invite`,
         cancelButtonText: `Close`,

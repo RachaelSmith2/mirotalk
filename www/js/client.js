@@ -2049,9 +2049,9 @@ function setMySettingsBtn() {
 /**
  * About button click event
  */
-function setAboutBtn() {
-    aboutBtn.addEventListener('click', (e) => {
-        showAbout();
+function setChangelogBtn() {
+    ChangelogBtn.addEventListener('click', (e) => {
+        showChangelog();
     });
 }
 
